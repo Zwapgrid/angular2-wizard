@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'wizard-step',
@@ -23,12 +23,13 @@ export class WizardStepComponent {
   private _isActive: boolean = false;
   isDisabled: boolean = true;
 
-  constructor() { }
+  constructor(private _changeDetectorRef: ChangeDetectorRef) { }
 
   @Input('isActive')
   set isActive(isActive: boolean) {
     this._isActive = isActive;
     this.isDisabled = false;
+    this._changeDetectorRef.detectChanges(); // workaround for ISSUE https://github.com/angular/angular/issues/6005
   }
 
   get isActive(): boolean {
