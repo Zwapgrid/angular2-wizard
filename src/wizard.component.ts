@@ -47,12 +47,26 @@ export class WizardComponent implements AfterContentInit {
   constructor() { }
 
   ngAfterContentInit() {
+    let tempSteps: Array<WizardStepComponent>;
     this.wizardSteps.forEach(step => this._steps.push(step));
+    this.wizardSteps.changes.subscribe((wizardStepsNew) => {
+      tempSteps = [];
+      wizardStepsNew.forEach((newStep:any) => {
+        tempSteps.push(newStep);
+      });
+      this.steps = tempSteps;
+      this.steps[0].isActive = true;
+    });
+
     this.steps[0].isActive = true;
   }
 
   get steps(): Array<WizardStepComponent> {
     return this._steps.filter(step => !step.hidden);
+  }
+
+  set steps(stp) {
+    this._steps = stp;
   }
 
   get isCompleted(): boolean {
