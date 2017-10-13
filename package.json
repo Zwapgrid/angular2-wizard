@@ -1,5 +1,5 @@
 {
-  "name": "angular2-wizard",
+  "name": "angular2-wizard-zg",
   "version": "0.3.0",
   "scripts": {
     "build": "ngc -p tsconfig.json",
@@ -10,11 +10,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/maiyaporn/angular2-wizard"
+    "url": "https://github.com/Zwapgrid/angular2-wizard"
   },
   "author": {
-    "name": "Maiyaporn Phanich",
-    "email": "p.maiyaporn@gmail.com"
+    "name": "Zwapgrid",
+    "email": "dennis@zwapgrid.com"
   },
   "keywords": [
     "angular2-wizard",
@@ -26,11 +26,13 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/maiyaporn/angular2-wizard/issues"
+    "url": "https://github.com/Zwapgrid/angular2-wizard/issues"
   },
   "main": "./dist/index.js",
   "dependencies": {
-    "bootstrap": "^4.0.0-alpha.6"
+    "bootstrap": "^4.0.0-alpha.6",
+    "jquery": "^3.2.12",
+    "popper.js": "^1.12.5"
   },
   "devDependencies": {
     "@angular/common": "^2.3.1",
